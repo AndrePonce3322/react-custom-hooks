@@ -1,0 +1,66 @@
+{
+  "Hooks Básicos": [
+    {
+      "nombre": "useState",
+      "funcionalidad": "Agregar estado a componentes funcionales."
+    },
+    {
+      "nombre": "useEffect",
+      "funcionalidad": "Realizar efectos secundarios en componentes funcionales."
+    },
+    {
+      "nombre": "useContext",
+      "funcionalidad": "Acceder al contexto en componentes funcionales."
+    },
+    {
+      "nombre": "useReducer",
+      "funcionalidad": "Manejar estados complejos utilizando un patrón de reducción de acciones."
+    }
+  ],
+  "Hooks Adicionales": [
+    {
+      "nombre": "useRef",
+      "funcionalidad": "Acceder al DOM y a valores persistentes entre renderizaciones."
+    },
+    {
+      "nombre": "useMemo",
+      "funcionalidad": "Optimizar el cálculo costoso de valores derivados."
+    },
+    {
+      "nombre": "useCallback",
+      "funcionalidad": "Optimizar la creación de funciones en componentes."
+    },
+    {
+      "nombre": "useLayoutEffect",
+      "funcionalidad": "Ejecutar efectos de manera síncrona después de las actualizaciones de DOM."
+    },
+    {
+      "nombre": "useEffect para limpieza",
+      "funcionalidad": "Realizar operaciones de limpieza cuando el componente se desmonta o cambian dependencias."
+    },
+    {
+      "nombre": "useImperativeHandle",
+      "funcionalidad": "Personalizar el valor expuesto cuando se utiliza ref en un componente hijo."
+    }
+  ],
+  "Hooks Personalizados": [
+    {
+      "nombre": "Custom Hooks",
+      "funcionalidad": "Crear hooks personalizados para encapsular lógica reutilizable en la aplicación."
+    }
+  ],
+  "Hooks de Comportamiento (Librerías Externas)": [
+    {
+      "nombre": "useSWR",
+      "funcionalidad": "Gestión eficiente de solicitudes HTTP en componentes funcionales."
+    },
+    {
+      "nombre": "react-query",
+      "funcionalidad": "Gestión avanzada de datos y solicitudes en componentes funcionales."
+    },
+    {
+      "nombre": "Redux Hooks",
+      "funcionalidad": "Facilita la integración de Redux en componentes funcionales."
+    }
+  ]
+}
