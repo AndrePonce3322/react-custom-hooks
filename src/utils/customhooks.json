@@ -2,65 +2,79 @@
   "Hooks Básicos": [
     {
       "nombre": "useState",
-      "funcionalidad": "Agregar estado a componentes funcionales."
+      "funcionalidad": "Agregar estado a componentes funcionales.",
+      "codigo": "import React, { useState } from 'react';\n\nfunction MiComponente() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <p>Contador: {count}</p>\n      <button onClick={() => setCount(count + 1)}>Incrementar</button>\n    </div>\n  );\n}\n"
     },
     {
       "nombre": "useEffect",
-      "funcionalidad": "Realizar efectos secundarios en componentes funcionales."
+      "funcionalidad": "Realizar efectos secundarios en componentes funcionales.",
+      "codigo": "import React, { useEffect, useState } from 'react';\n\nfunction MiComponente() {\n  const [data, setData] = useState(null);\n\n  useEffect(() => {\n    // Realizar una llamada a una API o realizar otros efectos secundarios aquí\n    // Actualizar el estado cuando sea necesario usando setData\n  }, []);\n\n  return <div>Datos: {data}</div>;"
     },
     {
       "nombre": "useContext",
-      "funcionalidad": "Acceder al contexto en componentes funcionales."
+      "funcionalidad": "Acceder al contexto en componentes funcionales.",
+      "codigo": "import React, { useContext } from 'react';\nimport MiContexto from './MiContexto';\n\nfunction MiComponente() {\n  const valorDelContexto = useContext(MiContexto);\n\n  return <div>Valor del contexto: {valorDelContexto}</div>;"
     },
     {
       "nombre": "useReducer",
-      "funcionalidad": "Manejar estados complejos utilizando un patrón de reducción de acciones."
+      "funcionalidad": "Manejar estados complejos utilizando un patrón de reducción de acciones.",
+      "codigo": "import React, { useReducer } from 'react';\n\nconst initialState = { count: 0 };\n\nfunction reducer(state, action) {\n  switch (action.type) {\n    case 'increment':\n      return { count: state.count + 1 };\n    case 'decrement':\n      return { count: state.count - 1 };\n    default:\n      return state;\n  }\n}\n\nfunction MiComponente() {\n  const [state, dispatch] = useReducer(reducer, initialState);\n\n  return (\n    <div>\n      <p>Contador: {state.count}</p>\n      <button onClick={() => dispatch({ type: 'increment' })}>Incrementar</button>\n      <button onClick={() => dispatch({ type: 'decrement' })}>Decrementar</button>\n    </div>\n  );"
     }
   ],
   "Hooks Adicionales": [
     {
       "nombre": "useRef",
-      "funcionalidad": "Acceder al DOM y a valores persistentes entre renderizaciones."
+      "funcionalidad": "Acceder al DOM y a valores persistentes entre renderizaciones.",
+      "codigo": "import React, { useRef, useEffect } from 'react';\n\nfunction MiComponente() {\n  const myRef = useRef(null);\n\n  useEffect(() => {\n    // Acceder al elemento DOM usando myRef.current\n  }, []);\n\n  return <div ref={myRef}>Elemento DOM</div>;"
     },
     {
       "nombre": "useMemo",
-      "funcionalidad": "Optimizar el cálculo costoso de valores derivados."
+      "funcionalidad": "Optimizar el cálculo costoso de valores derivados.",
+      "codigo": "import React, { useMemo } from 'react';\n\nfunction MiComponente({ data }) {\n  const resultadoCalculado = useMemo(() => {\n    // Realizar un cálculo costoso basado en 'data'\n    return resultado;\n  }, [data]);\n\n  return <div>Resultado: {resultadoCalculado}</div>;"
     },
     {
       "nombre": "useCallback",
-      "funcionalidad": "Optimizar la creación de funciones en componentes."
+      "funcionalidad": "Optimizar la creación de funciones en componentes.",
+      "codigo": "import React, { useCallback } from 'react';\n\nfunction MiComponente({ onClick }) {\n  const handleClick = useCallback(() => {\n    // Realizar alguna acción en el clic\n  }, []);\n\n  return <button onClick={handleClick}>Clic</button>;"
     },
     {
       "nombre": "useLayoutEffect",
-      "funcionalidad": "Ejecutar efectos de manera síncrona después de las actualizaciones de DOM."
+      "funcionalidad": "Ejecutar efectos de manera síncrona después de las actualizaciones de DOM.",
+      "codigo": "import React, { useLayoutEffect } from 'react';\n\nfunction MiComponente() {\n  useLayoutEffect(() => {\n    // Realizar efectos después de las actualizaciones de DOM\n  }, []);\n\n  return <div>Contenido</div>;"
     },
     {
       "nombre": "useEffect para limpieza",
-      "funcionalidad": "Realizar operaciones de limpieza cuando el componente se desmonta o cambian dependencias."
+      "funcionalidad": "Realizar operaciones de limpieza cuando el componente se desmonta o cambian dependencias.",
+      "codigo": "import React, { useEffect } from 'react';\n\nfunction MiComponente({ data }) {\n  useEffect(() => {\n    // Realizar operaciones de limpieza cuando el componente se desmonta\n    return () => {\n      // Limpiar recursos, cancelar suscripciones, etc.\n    };\n  }, [data]);\n\n  return <div>Datos: {data}</div>;"
     },
     {
       "nombre": "useImperativeHandle",
-      "funcionalidad": "Personalizar el valor expuesto cuando se utiliza ref en un componente hijo."
+      "funcionalidad": "Personalizar el valor expuesto cuando se utiliza ref en un componente hijo.",
+      "codigo": "import React, { forwardRef, useImperativeHandle } from 'react';\n\nconst MiComponenteHijo = forwardRef((props, ref) => {\n  useImperativeHandle(ref, () => ({\n    // Definir métodos o propiedades personalizadas para exponer\n  }));\n\n  return <div>Componente Hijo</div>;\n});\n\nexport default MiComponenteHijo;\n```"
     }
   ],
   "Hooks Personalizados": [
     {
       "nombre": "Custom Hooks",
-      "funcionalidad": "Crear hooks personalizados para encapsular lógica reutilizable en la aplicación."
+      "funcionalidad": "Crear hooks personalizados para encapsular lógica reutilizable en la aplicación.",
+      "codigo": "// En algún archivo personalizado\nimport { useState, useEffect } from 'react';\n\nfunction useMiHook() {\n  const [data, setData] = useState(null);\n\n  useEffect(() => {\n    // Realizar lógica personalizada y efectos secundarios aquí\n  }, []);\n\n  return data;\n}\n\n// En otro componente\nimport React from 'react';\nimport useMiHook from './useMiHook';\n\nfunction MiComponente() {\n  const data = useMiHook();\n\n  return <div>Datos: {data}</div>;"
     }
   ],
   "Hooks de Comportamiento (Librerías Externas)": [
     {
       "nombre": "useSWR",
-      "funcionalidad": "Gestión eficiente de solicitudes HTTP en componentes funcionales."
+      "funcionalidad": "Gestión eficiente de solicitudes HTTP en componentes funcionales.",
+      "codigo": "import useSWR from 'swr';\n\nfunction MiComponente() {\n  const { data, error } = useSWR('/api/data', fetcher);\n\n  if (error) return <div>Error: {error.message}</div>;\n  if (!data) return <div>Cargando...</div>;\n\n  return <div>Datos: {data}</div>;"
     },
     {
       "nombre": "react-query",
-      "funcionalidad": "Gestión avanzada de datos y solicitudes en componentes funcionales."
+      "funcionalidad": "Gestión avanzada de datos y solicitudes en componentes funcionales.",
+      "codigo": "import { useQuery } from 'react-query';\n\nfunction MiComponente() {\n  const { data, error, isLoading } = useQuery('miConsulta', fetchMiData);\n\n  if (isLoading) return <div>Cargando...</div>;\n  if (error) return <div>Error: {error.message}</div>;\n\n  return <div>Datos: {data}</div>;"
     },
     {
       "nombre": "Redux Hooks",
-      "funcionalidad": "Facilita la integración de Redux en componentes funcionales."
+      "funcionalidad": "Facilita la integración de Redux en componentes funcionales.",
+      "codigo": "import { useSelector, useDispatch } from 'react-redux';\n\nfunction MiComponente() {\n  const count = useSelector((state) => state.count);\n  const dispatch = useDispatch();\n\n  return (\n    <div>\n      <p>Contador: {count}</p>\n      <button onClick={() => dispatch({ type: 'increment' })}>Incrementar</button>\n      <button onClick={() => dispatch({ type: 'decrement' })}>Decrementar</button>\n    </div>\n  );"
     }
   ]
 }

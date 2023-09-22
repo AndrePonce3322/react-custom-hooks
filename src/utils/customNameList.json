@@ -1,0 +1,18 @@
+{
+  "AllCustomHooksName": [
+    "useState",
+    "useEffect",
+    "useContext",
+    "useReducer",
+    "useRef",
+    "useMemo",
+    "useCallback",
+    "useLayoutEffect",
+    "useEffect para limpieza",
+    "useImperativeHandle",
+    "Custom Hooks",
+    "useSWR",
+    "react-query",
+    "Redux Hooks"
+  ]
+}

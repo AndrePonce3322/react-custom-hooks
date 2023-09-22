@@ -14,7 +14,7 @@ export const InitialCustomHooksList = () => {
           <h2 className='mt-4 text-3xl hover:underline'><span className='font-bold'>#</span> {category}</h2>
           <ul>
             {CustomHooks[category].map((hook, index) => (
-              <li key={index} className='list-disc'><Link to={hook.nombre}>{hook.nombre}</Link></li>
+              <li key={index} className='list-disc'><Link to={`/hook/${hook.nombre}`}>{hook.nombre}</Link></li>
             ))}
           </ul>
         </section>
