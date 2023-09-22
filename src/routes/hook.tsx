@@ -18,8 +18,10 @@ export const Hook = () => {
   useEffect(() => {
     document.title = `${name} | CustomHooks`;
 
-    const hook = ListHook[name];
-    setHook(hook);
+    if (name) {
+      const hook = ListHook[name as keyof typeof ListHook];
+      setHook(hook);
+    }
   }, [name])
 
   const hooks = CustomHookJson.AllCustomHooksName.find((hook) => hook === name);
