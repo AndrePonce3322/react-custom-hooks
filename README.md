@@ -4,64 +4,60 @@ Este repositorio contiene ejemplos de custom hooks de React junto con sus funcio
 
 ## Hooks Disponibles
 
-### useState
+- **useState**
 
-- **Funcionalidad:** Agregar estado a componentes funcionales.
-- **Código de Ejemplo:**
+  - Funcionalidad: Agregar estado a componentes funcionales.
 
-  ```jsx
-  import React, { useState } from 'react';
+- **useEffect**
 
-  function MiComponente() {
-    const [count, setCount] = useState(0);
+  - Funcionalidad: Realizar efectos secundarios en componentes funcionales.
 
-    return (
-      <div>
-        <p>Contador: {count}</p>
-        <button onClick={() => setCount(count + 1)}>Incrementar</button>
-      </div>
-    );
-  }
-  ```
+- **useContext**
 
-### useEffect
+  - Funcionalidad: Acceder al contexto en componentes funcionales.
 
-- **Funcionalidad:** Realizar efectos secundarios en componentes funcionales.
-- **Código de Ejemplo:**
+- **useReducer**
 
-  ```jsx
-  import React, { useEffect, useState } from 'react';
+  - Funcionalidad: Manejar estados complejos utilizando un patrón de reducción de acciones.
 
-  function MiComponente() {
-    const [data, setData] = useState(null);
+- **useRef**
 
-    useEffect(() => {
-      // Realizar una llamada a una API o realizar otros efectos secundarios aquí
-    }, []);
+  - Funcionalidad: Acceder al DOM y a valores persistentes entre renderizaciones.
 
-    return <div>Datos: {data}</div>;
-  }
-  ```
+- **useMemo**
 
-### useContext
+  - Funcionalidad: Optimizar el cálculo costoso de valores derivados.
 
-- **Funcionalidad:** Acceder al contexto en componentes funcionales.
-- **Código de Ejemplo:**
+- **useCallback**
 
-  ```jsx
-  import React, { useContext } from 'react';
-  import MiContexto from './MiContexto';
+  - Funcionalidad: Optimizar la creación de funciones en componentes.
 
-  function MiComponente() {
-    const valorDelContexto = useContext(MiContexto);
+- **useLayoutEffect**
 
-    return <div>Valor del contexto: {valorDelContexto}</div>;
-  }
-  ```
+  - Funcionalidad: Ejecutar efectos de manera síncrona después de las actualizaciones de DOM.
 
-### ...
+- **useEffect para limpieza**
 
-(Puedes agregar más hooks aquí con su funcionalidad y ejemplos de código)
+  - Funcionalidad: Realizar operaciones de limpieza cuando el componente se desmonta o cambian dependencias.
+
+- **useImperativeHandle**
+
+  - Funcionalidad: Personalizar el valor expuesto cuando se utiliza ref en un componente hijo.
+
+- **Custom Hooks**
+
+  - Funcionalidad: Crear hooks personalizados para encapsular lógica reutilizable en la aplicación.
+
+- **useSWR**
+
+  - Funcionalidad: Gestión eficiente de solicitudes HTTP en componentes funcionales.
+
+- **react-query**
+
+  - Funcionalidad: Gestión avanzada de datos y solicitudes en componentes funcionales.
+
+- **Redux Hooks**
+  - Funcionalidad: Facilita la integración de Redux en componentes funcionales.
 
 ## Cómo Usar
 
@@ -78,7 +74,3 @@ Para utilizar estos custom hooks en tu proyecto:
 ## Contribuciones
 
 Si tienes algún hook personalizado que te gustaría agregar a este repositorio, ¡siéntete libre de contribuir! Simplemente realiza un pull request con tu contribución.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para obtener más detalles.
